@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAVER 스타일 프론트 페이지</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <!-- 상단 헤더: 로고 + 검색창 -->
+  <header class="header">
+    <div class="header-top">
+      <ul class="top-links">
+        <li><a href="#">메일</a></li>
+        <li><a href="#">카페</a></li>
+        <li><a href="#">블로그</a></li>
+        <li><a href="#">쇼핑</a></li>
+        <li><a href="#">뉴스</a></li>
+        <li><a href="#">증권</a></li>
+        <li><a href="#">부동산</a></li>
+        <li><a href="#">지도</a></li>
+        <li><a href="#">웹툰</a></li>
+      </ul>
+    </div>
+
+    <div class="search-area">
+      <h1 class="logo"><a href="#" aria-label="홈">NAVER</a></h1>
+      <form class="search-form" role="search" onsubmit="return handleSearch(event)">
+        <label for="query" class="sr-only">검색어 입력</label>
+        <input id="query" type="search" placeholder="검색어를 입력해 주세요." autocomplete="off" />
+        <button type="submit" class="search-btn" aria-label="검색">
+          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.5" />
+            <line x1="15.5" y1="15.5" x2="21" y2="21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- 바로가기 아이콘 -->
+    <nav class="shortcut" aria-label="서비스 바로가기">
+      <ul>
+        <li><a href="#"><span class="icon" style="background:#03c75a">✉</span>메일</a></li>
+        <li><a href="#"><span class="icon" style="background:#00b843">☕</span>카페</a></li>
+        <li><a href="#"><span class="icon" style="background:#19ce60">B</span>블로그</a></li>
+        <li><a href="#"><span class="icon" style="background:#ff6b6b">🛒</span>쇼핑</a></li>
+        <li><a href="#"><span class="icon" style="background:#4a8cff">N</span>뉴스</a></li>
+        <li><a href="#"><span class="icon" style="background:#f04040">📈</span>증권</a></li>
+        <li><a href="#"><span class="icon" style="background:#7a5cff">🏠</span>부동산</a></li>
+        <li><a href="#"><span class="icon" style="background:#2db400">📍</span>지도</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <!-- 왼쪽 컬럼 -->
+    <div class="col-left">
+      <section class="card news" aria-labelledby="news-title">
+        <div class="card-head">
+          <h2 id="news-title">뉴스스탠드</h2>
+          <div class="tabs" role="tablist">
+            <button role="tab" aria-selected="true" class="tab active" data-tab="all">전체언론사</button>
+            <button role="tab" aria-selected="false" class="tab" data-tab="my">구독한 언론사</button>
+          </div>
+        </div>
+        <ul class="press-grid" id="pressGrid"></ul>
+      </section>
+
+      <section class="card" aria-labelledby="topic-title">
+        <div class="card-head">
+          <h2 id="topic-title">오늘의 주제</h2>
+        </div>
+        <ul class="topic-list" id="topicList"></ul>
+      </section>
+    </div>
+
+    <!-- 오른쪽 컬럼 -->
+    <aside class="col-right">
+      <section class="card login-box">
+        <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+        <a href="#" class="login-btn">NAVER 로그인</a>
+        <div class="login-sub">
+          <a href="#">아이디 찾기</a> · <a href="#">비밀번호 찾기</a> · <a href="#">회원가입</a>
+        </div>
+      </section>
+
+      <section class="card weather" aria-labelledby="weather-title">
+        <h2 id="weather-title" class="sr-only">날씨</h2>
+        <div class="weather-main">
+          <span class="weather-icon" aria-hidden="true">☀️</span>
+          <div>
+            <strong class="temp">21°</strong>
+            <span class="desc">맑음 · 서울</span>
+          </div>
+        </div>
+        <p class="weather-sub">미세먼지 <b class="good">좋음</b> · 초미세먼지 <b class="good">좋음</b></p>
+      </section>
+
+      <section class="card" aria-labelledby="shop-title">
+        <div class="card-head">
+          <h2 id="shop-title">쇼핑</h2>
+        </div>
+        <ul class="shop-list" id="shopList"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <ul>
+      <li><a href="#">회사소개</a></li>
+      <li><a href="#">인재채용</a></li>
+      <li><a href="#">제휴제안</a></li>
+      <li><a href="#">이용약관</a></li>
+      <li><a href="#"><b>개인정보처리방침</b></a></li>
+      <li><a href="#">고객센터</a></li>
+    </ul>
+    <p>© Sample Corp. 이 페이지는 학습용 데모입니다.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
